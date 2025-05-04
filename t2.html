@@ -29,6 +29,7 @@ h1, h2, h3, h4, h5, h6 {
       <a href="#render" class="w3-bar-item w3-button">Render</a>
       <a href="#design" class="w3-bar-item w3-button">Design</a>
       <a href="#bringup" class="w3-bar-item w3-button">Bringup</a>
+      <a href="./" class="w3-bar-item w3-light-grey w3-round w3-button">Home</a>
     </div>
   </div>
 </div>
@@ -46,11 +47,11 @@ h1, h2, h3, h4, h5, h6 {
 
   <!-- About section -->
   <div class="w3-row w3-padding-64" id="about">
-    <div class="w3-col m6 w3-padding-large w3-hide-small">
-     <img src="./public/images/oculus_arender.png" class="w3-round w3-image" alt="Oculus Altium Render" width="600" height="750">
+    <div class="w3-col l6 w3-padding-large">
+     <img src="./public/images/oculus_arender.png" class="w3-round w3-image" alt="Oculus Altium Render" width="100%">
     </div>
 
-    <div class="w3-col m6 w3-padding-large">
+    <div class="w3-col l6 w3-padding-large">
       <h1 class="w3-center">About This Board</h1>
       <h5 class="w3-center">(my third ever PCB design!)</h5>
       <p class="w3-large">This is Oculus, an 8-layer FPGA accelerator board intended to serve as a companion processor on the UAVs@Berkeley competition hexacopter. <a href="https://uav.studentorg.berkeley.edu/106a-fa24-gps/" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green">One of our projects</a> used the OpenCV implementation of ORB, a computer vision algorithm that is used to help match points in images together. Unfortunately, it runs at about 2 frames per second on our onboard computer, so I thought it would be an awesome experience to create a PCB to run a hardware implementation of it. Video data is streamed over RTSP into the ethernet port, processed on the FPGA, and output to the main onboard computer through USB 2.0. This particular form factor is compact and light, which is good for use aboard our drone where space and weight are at a premium.</p>
