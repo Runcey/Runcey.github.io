@@ -36,9 +36,9 @@ h1, h2, h3, h4, h5, h6 {
 
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
-  <img class="w3-image" src="./public/images/oculus_banner.JPG" alt="Oculus V1.0 manufactured PCB" width="1600" height="800">
+  <img class="w3-image w3-round-xlarge" src="./public/images/oculus_banner.JPG" alt="Oculus V1.0 manufactured PCB" width="1600" height="800">
   <div class="w3-display-bottomleft w3-padding-large">
-    <h1 class="w3-xxlarge w3-white w3-round-xlarge">Oculus V1.0</h1>
+    <h1 class="w3-xxlarge w3-white w3-padding w3-round-xlarge">Oculus V1.0</h1>
   </div>
 </header>
 
@@ -79,7 +79,7 @@ h1, h2, h3, h4, h5, h6 {
     <h1>3D Render</h1><br>
     <!-- <model-viewer> HTML element -->
     <div class="w3-row w3-center w3-light-blue w3-padding-64 w3-round-xlarge">
-      <model-viewer src="./public/models/oculus_obj_draco.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="/public/posters/oculus_poster.webp" shadow-intensity="1" camera-orbit="0deg 45deg 310.2m" field-of-view="16.2deg">
+      <model-viewer class="w3-round-xlarge" src="./public/models/oculus_obj_draco.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="/public/posters/oculus_poster.webp" shadow-intensity="1" camera-orbit="0deg 45deg 310.2m" field-of-view="16.2deg">
         <div class="progress-bar hide" slot="progress-bar">
             <div class="update-bar"></div>
         </div>
