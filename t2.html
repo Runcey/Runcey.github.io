@@ -25,11 +25,11 @@ h1, h2, h3, h4, h5, h6 {
     <a href="#home" class="w3-bar-item w3-button">under construction</a>
     <!-- Right-sided navbar links. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
-      <a href="#about" class="w3-bar-item w3-button">About</a>
-      <a href="#render" class="w3-bar-item w3-button">Render</a>
-      <a href="#design" class="w3-bar-item w3-button">Design</a>
-      <a href="#bringup" class="w3-bar-item w3-button">Bringup</a>
-      <a href="./" class="w3-bar-item w3-light-grey w3-round w3-button">Home</a>
+      <a href="./t1" class="w3-bar-item w3-button">T1</a>
+      <a href="./t2" class="w3-bar-item w3-button">T2</a>
+      <a href="./" class="w3-bar-item w3-button">T3</a>
+      <a href="./" class="w3-bar-item w3-button">T4</a>
+      <a href="./" class="w3-bar-item w3-light-grey w3-round-xlarge w3-button">Home</a>
     </div>
   </div>
 </div>
@@ -38,23 +38,37 @@ h1, h2, h3, h4, h5, h6 {
 <header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
   <img class="w3-image" src="./public/images/oculus_banner.JPG" alt="Oculus V1.0 manufactured PCB" width="1600" height="800">
   <div class="w3-display-bottomleft w3-padding-large">
-    <h1 class="w3-xxlarge w3-white w3-round">Oculus V1.0</h1>
+    <h1 class="w3-xxlarge w3-white w3-round-xlarge">Oculus V1.0</h1>
   </div>
 </header>
 
 <!-- Page content -->
 <div class="w3-content" style="max-width:1100px">
+  <hr>
+  <!-- Table of contents bar -->
+  <div class="w3-row w3-padding-16 w3-border w3-round-large" id="tc">
+    <div class="w3-center w3-xxlarge w3-text-blue-grey">
+      <a href="#about" class="w3-bar-item w3-button">About</a>
+      <a href="#render" class="w3-bar-item w3-button">Render</a>
+      <a href="#design" class="w3-bar-item w3-button">Design</a>
+      <a href="#bringup" class="w3-bar-item w3-button">Bringup</a>
+    </div>
+  </div>
+  
+  <hr>
 
   <!-- About section -->
   <div class="w3-row w3-padding-64" id="about">
     <div class="w3-col l6 w3-padding-large">
-     <img src="./public/images/oculus_arender.png" class="w3-round w3-image" alt="Oculus Altium Render" width="100%">
+     <img src="./public/images/oculus_arender.png" class="w3-round-xlarge w3-image" alt="Oculus Altium Render" width="100%">
     </div>
 
     <div class="w3-col l6 w3-padding-large">
       <h1 class="w3-center">About This Board</h1>
       <h5 class="w3-center">(my third ever PCB design!)</h5>
       <p class="w3-large">This is Oculus, an 8-layer FPGA accelerator board intended to serve as a companion processor on the UAVs@Berkeley competition hexacopter. <a href="https://uav.studentorg.berkeley.edu/106a-fa24-gps/" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green">One of our projects</a> used the OpenCV implementation of ORB, a computer vision algorithm that is used to help match points in images together. Unfortunately, it runs at about 2 frames per second on our onboard computer, so I thought it would be an awesome experience to create a PCB to run a hardware implementation of it. Video data is streamed over RTSP into the ethernet port, processed on the FPGA, and output to the main onboard computer through USB 2.0. This particular form factor is compact and light, which is good for use aboard our drone where space and weight are at a premium.</p>
+      <p class="w3-center w3-text-blue-grey w3-large"><b><a href="https://uav.studentorg.berkeley.edu/106a-fa24-gps/" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green">Check it out on GitHub!</a></b></p>
+      
     </div>
   </div>
   
@@ -64,7 +78,7 @@ h1, h2, h3, h4, h5, h6 {
   <div class="w3-container w3-padding-64" id="render">
     <h1>3D Render</h1><br>
     <!-- <model-viewer> HTML element -->
-    <div class="w3-row w3-center w3-light-blue w3-padding-64">
+    <div class="w3-row w3-center w3-light-blue w3-padding-64 w3-round-xlarge">
       <model-viewer src="./public/models/oculus_obj_draco.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="/public/posters/oculus_poster.webp" shadow-intensity="1" camera-orbit="0deg 45deg 310.2m" field-of-view="16.2deg">
         <div class="progress-bar hide" slot="progress-bar">
             <div class="update-bar"></div>
@@ -103,7 +117,7 @@ h1, h2, h3, h4, h5, h6 {
     </div>
     
     <div class="w3-col l6 w3-padding-large">
-      <img src="./public/images/oculus_closeups.jpeg" class="w3-round w3-image" alt="Oculus board closeups" style="width:100%">
+      <img src="./public/images/oculus_closeups.jpeg" class="w3-round-xlarge w3-image" alt="Oculus board closeups" style="width:100%">
     </div>
   </div>
 
