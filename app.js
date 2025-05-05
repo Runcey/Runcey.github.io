@@ -19,8 +19,12 @@ app.get('/t1', function (req, res) {
     res.sendFile(__dirname + '/t1.html');
 });
 
-app.get('/t2', function (req, res) {
-    res.sendFile(__dirname + '/t2.html');
+app.get('/oculus', function (req, res) {
+    res.sendFile(__dirname + '/oculus.html');
+});
+
+app.get('/t3', function (req, res) {
+    res.sendFile(__dirname + '/t3.html');
 });
 
 //run this server by entering "node app.js" using your command line. 
