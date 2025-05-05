@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>really cool website</title>
+<title>Oculus V1.0</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link type="text/css" href="/public/small_mv.css" rel="stylesheet"/>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="icon" href="./public/images/favicon.png">
+
 <!-- <style>
 body {font-family: "Times New Roman", Georgia, Serif;}
 h1, h2, h3, h4, h5, h6 {
@@ -21,15 +23,15 @@ h1, h2, h3, h4, h5, h6 {
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
-  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:3px;">
     <a href="#home" class="w3-bar-item w3-button">under construction</a>
     <!-- Right-sided navbar links. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
-      <a href="./t1" class="w3-bar-item w3-button">T1</a>
-      <a href="./t2" class="w3-bar-item w3-button">T2</a>
+      <a href="./oculus.html" class="w3-bar-item w3-button w3-round-xlarge w3-pale-blue">Oculus</a>
+      <a href="./t1.html" class="w3-bar-item w3-button">T1</a>
       <a href="./" class="w3-bar-item w3-button">T3</a>
       <a href="./" class="w3-bar-item w3-button">T4</a>
-      <a href="./" class="w3-bar-item w3-light-grey w3-round-xlarge w3-button">Home</a>
+      <a href="./" class="w3-bar-item w3-dark-grey w3-round-xlarge w3-button">Home</a>
     </div>
   </div>
 </div>
@@ -66,7 +68,7 @@ h1, h2, h3, h4, h5, h6 {
     <div class="w3-col l6 w3-padding-large">
       <h1 class="w3-center">About This Board</h1>
       <h5 class="w3-center">(my third ever PCB design!)</h5>
-      <p class="w3-large">This is Oculus, an 8-layer FPGA accelerator board intended to serve as a companion processor on the UAVs@Berkeley competition hexacopter. <a href="https://uav.studentorg.berkeley.edu/106a-fa24-gps/" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green">One of our projects</a> used the OpenCV implementation of ORB, a computer vision algorithm that is used to help match points in images together. Unfortunately, it runs at about 2 frames per second on our onboard computer, so I thought it would be an awesome experience to create a PCB to run a hardware implementation of it. Video data is streamed over RTSP into the ethernet port, processed on the FPGA, and output to the main onboard computer through USB 2.0. This particular form factor is compact and light, which is good for use aboard our drone where space and weight are at a premium.</p>
+      <p class="w3-large">This is Oculus, an 8-layer FPGA accelerator board intended to serve as a companion processor on the UAVs@Berkeley competition hexacopter. I did the schematic design and the majority of the layout for this board in Spring 2025 in <a href="https://ieee.berkeley.edu/#decals" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green w3-text-blue-grey">APE</a>, a UC Berkeley Decal, while my partner worked on the firmware and RTL. <a href="https://uav.studentorg.berkeley.edu/106a-fa24-gps/" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green w3-text-blue-grey">One of UAVs@Berkeley's projects</a> used the OpenCV implementation of ORB, a computer vision algorithm that is used to help match points in images together. Unfortunately, it runs at about 2 frames per second on our onboard computer, so I thought it would be an awesome experience to create a PCB to run a hardware implementation of it. Video data is streamed over RTSP into the ethernet port, processed on the FPGA, and output to the main onboard computer through USB 2.0. This particular form factor is compact and light, which is good for use aboard our drone where space and weight are at a premium.</p>
       <p class="w3-center w3-text-blue-grey w3-large"><b><a href="https://uav.studentorg.berkeley.edu/106a-fa24-gps/" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green">Check it out on GitHub!</a></b></p>
       
     </div>
@@ -78,7 +80,7 @@ h1, h2, h3, h4, h5, h6 {
   <div class="w3-container w3-padding-64" id="render">
     <h1>3D Render</h1><br>
     <!-- <model-viewer> HTML element -->
-    <div class="w3-row w3-center w3-light-blue w3-padding-64 w3-round-xlarge">
+    <div class="w3-row w3-center w3-pale-blue w3-padding-64 w3-round-xlarge">
       <model-viewer class="w3-round-xlarge" src="./public/models/oculus_obj_draco.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="/public/posters/oculus_poster.webp" shadow-intensity="1" camera-orbit="0deg 45deg 310.2m" field-of-view="16.2deg">
         <div class="progress-bar hide" slot="progress-bar">
             <div class="update-bar"></div>
@@ -136,7 +138,7 @@ h1, h2, h3, h4, h5, h6 {
 
 <!-- Footer -->
 <footer class="w3-center w3-light-grey w3-padding-32">
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green">w3.css</a></p>
 </footer>
 
 </body>

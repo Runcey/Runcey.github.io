@@ -1,3 +1,5 @@
+// local development script, run with npm start or node app.js
+
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -21,7 +23,7 @@ app.get('/t2', function (req, res) {
     res.sendFile(__dirname + '/t2.html');
 });
 
-//run this server by entering "node App.js" using your command line. 
+//run this server by entering "node app.js" using your command line. 
 app.listen(port, () => {
     console.log(`Server is running on http://${host}:${port}`);
   });
