@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Parachute Release</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link type="text/css" href="/public/small_mv.css" rel="stylesheet"/>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="icon" href="./public/images/favicon.png">
+
+<!-- <style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+</style> -->
+<style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:3px;">
+    <a href="#home" class="w3-bar-item w3-button">under construction</a>
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="./oculus.html" class="w3-bar-item w3-button">Oculus</a>
+      <a href="./dawnwave.html" class="w3-bar-item w3-button">DawnWave</a>
+      <a href="./rp2040cr.html" class="w3-bar-item w3-button w3-round-xlarge w3-pale-blue">Parachute Release</a>
+      <a href="./" class="w3-bar-item w3-dark-grey w3-round-xlarge w3-button">Home</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+  <img class="w3-image w3-round-xlarge" src="./public/images/rp2040cr_banner.jpg" alt="Parachute Release manufactured PCB" width="1600" height="800">
+  <div class="w3-display-bottomleft w3-padding-large">
+    <h1 class="w3-xxlarge w3-white w3-padding w3-round-xlarge">Parachute Release</h1>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+  <hr>
+  <!-- Table of contents bar -->
+  <div class="w3-row w3-padding-16 w3-border w3-round-large" id="tc">
+    <div class="w3-center w3-xxlarge w3-text-blue-grey">
+      <a href="#about" class="w3-bar-item w3-button">About</a>
+      <a href="#render" class="w3-bar-item w3-button">Render</a>
+      <a href="#design" class="w3-bar-item w3-button">Design</a>
+      <a href="#bringup" class="w3-bar-item w3-button">Bringup</a>
+    </div>
+  </div>
+  
+  <hr>
+
+  <!-- About section -->
+  <div class="w3-row w3-padding-64" id="about">
+    <div class="w3-col l6 w3-padding-large">
+     <img src="./public/images/oculus_arender.png" class="w3-round-xlarge w3-image" alt="Oculus Altium Render" width="100%">
+    </div>
+
+    <div class="w3-col l6 w3-padding-large">
+      <h1 class="w3-center">About This Board</h1>
+      <h5 class="w3-center">(my third ever PCB design!)</h5>
+      <p class="w3-large">This is Oculus, an 8-layer FPGA accelerator board created in Altium intended to serve as a companion processor on the UAVs@Berkeley competition hexacopter. I did the schematic design and the majority of the layout for this board in Spring 2025 in <a href="https://ieee.berkeley.edu/#decals" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green w3-text-blue-grey">APE</a>, a UC Berkeley Decal, while my partner worked on the firmware and RTL. <a href="https://uav.studentorg.berkeley.edu/106a-fa24-gps/" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green w3-text-blue-grey">One of UAVs@Berkeley's projects</a> used the OpenCV implementation of ORB, a computer vision algorithm that is used to help match points in images together. Unfortunately, it runs at about 2 frames per second on our onboard computer, so I thought it would be an awesome experience to create a PCB to run a hardware implementation of it. Video data is streamed over RTSP into the ethernet port, processed on the FPGA, and output to the main onboard computer through USB 2.0. This particular form factor is compact and light, which is good for use aboard our drone where space and weight are at a premium.</p>
+      <p class="w3-center w3-text-blue-grey w3-large"><b><a href="https://uav.studentorg.berkeley.edu/106a-fa24-gps/" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green">Check it out on GitHub!</a></b></p>
+      
+    </div>
+  </div>
+  
+  <hr>
+
+  <!-- 3D render section -->
+  <div class="w3-container w3-padding-64" id="render">
+    <h1>3D Render</h1>
+    <h4><a href="./rp2040cr_fs.html" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green">Fullscreen (opens in new tab)</a></h4><br>
+    <!-- <model-viewer> HTML element -->
+    <div class="w3-row w3-center w3-pale-blue w3-padding-64 w3-round-xlarge">
+      <model-viewer class="w3-round-xlarge" src="./public/models/rp2040_cr.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="rp2040cr_poster.webp" shadow-intensity="1" exposure="0.75" camera-orbit="30deg 90deg 0.1038m" field-of-view="30deg">
+        <div class="progress-bar hide" slot="progress-bar">
+            <div class="update-bar"></div>
+        </div>
+      </model-viewer>
+    </div>
+    <script src="/public/script.js"></script>
+    <!-- Loads <model-viewer> for browsers: -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+  </div>
+
+  <hr>
+  
+  <!-- Design section -->
+  <div class="w3-row w3-padding-64" id="design">
+    <div class="w3-col l6 w3-padding-large">
+      <h1 class="w3-center">Design Choices</h1><br>
+      <h4>Zynq-7000 SoC</h4>
+      <p class="w3-text-grey">XC7Z020 400-BGA with two ARM cores and 85K PL cells for FPGA fabric. This was the cheapest FPGA that satisfied the requirements for the project, considering I was on a tight budget. This was also my first complex PCB design project, so I wanted something that had readily accessible example designs in case I couldn't figure something out on my own. </p><br>
+    
+      <h4>512MB DDR3 SDRAM</h4>
+      <p class="w3-text-grey">Intended to hold images while processing them in the FPGA. DDR3 is the fastest memory supported on this FPGA, and I was fine with an extra voltage level on the board.</p><br>
+    
+      <h4>Gigabit Ethernet</h4>
+      <p class="w3-text-grey">DP83867CR ethernet PHY for RTSP video stream input. The camera on the UAVs@Berkeley competition hexacopter sends video data as an RTSP stream, so this was needed. It also opens the board up to more applications for use as a development tool. This particular PHY was chosen because of its clear documentation and availability.</p><br>
+    
+      <h4>USB 2.0</h4>
+      <p class="w3-text-grey">USB3320 USB 2.0 PHY with user-selectable host/peripheral mode. This is the fastest USB data protocol the FPGA supports, and it has pretty solid data transfer rates (480Mbps). That is more than enough to transfer low-resolution images and key point information to the onboard computer.</p><br>  
+
+      <h4>3 selectable boot modes</h4>
+      <p class="w3-text-grey">JTAG, QSPI, and SD card for large boot images.</p><br>   
+
+      <h4>Raspberry Pi-style IO header</h4>
+      <p class="w3-text-grey">GPIO pins connected to FPGA fabric to expand functionality of the board.</p>
+
+    </div>
+    
+    <div class="w3-col l6 w3-padding-large">
+      <img src="./public/images/oculus_closeups.jpeg" class="w3-round-xlarge w3-image" alt="Oculus board closeups" style="width:100%">
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Bringup Section -->
+  <div class="w3-container w3-padding-64" id="bringup">
+    <h1>Bringup/Future changes</h1><br>
+    <p>better test points, double sided board, smaller components, on/off switch</p>
+    <p class="w3-text-blue-grey w3-large"><b>cool heading</b></p>
+    <p>more text</p>
+  </div>
+  
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+</body>
+</html>

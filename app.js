@@ -15,16 +15,16 @@ app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "/"));
 });
 
-app.get('/t1', function (req, res) {
-    res.sendFile(__dirname + '/t1.html');
-});
-
 app.get('/oculus', function (req, res) {
     res.sendFile(__dirname + '/oculus.html');
 });
 
-app.get('/t3', function (req, res) {
-    res.sendFile(__dirname + '/t3.html');
+app.get('/oculus_fs', function (req, res) {
+    res.sendFile(__dirname + '/oculus_fs.html');
+});
+
+app.get('/rp2040cr_fs', function (req, res) {
+    res.sendFile(__dirname + '/rp2040cr_fs.html');
 });
 
 //run this server by entering "node app.js" using your command line. 

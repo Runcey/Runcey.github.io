@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Oculus V1.0</title>
+<title>Oculus</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link type="text/css" href="/public/small_mv.css" rel="stylesheet"/>
+<link type="text/css" href="./public/small_mv.css" rel="stylesheet"/>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
 <link rel="icon" href="./public/images/favicon.png">
 
@@ -28,9 +28,8 @@ h1, h2, h3, h4, h5, h6 {
     <!-- Right-sided navbar links. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
       <a href="./oculus.html" class="w3-bar-item w3-button w3-round-xlarge w3-pale-blue">Oculus</a>
-      <a href="./t1.html" class="w3-bar-item w3-button">T1</a>
-      <a href="./" class="w3-bar-item w3-button">T3</a>
-      <a href="./" class="w3-bar-item w3-button">T4</a>
+      <a href="./dawnwave.html" class="w3-bar-item w3-button">DawnWave</a>
+      <a href="./rp2040cr.html" class="w3-bar-item w3-button">Parachute Release</a>
       <a href="./" class="w3-bar-item w3-dark-grey w3-round-xlarge w3-button">Home</a>
     </div>
   </div>
@@ -40,7 +39,7 @@ h1, h2, h3, h4, h5, h6 {
 <header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
   <img class="w3-image w3-round-xlarge" src="./public/images/oculus_banner.JPG" alt="Oculus V1.0 manufactured PCB" width="1600" height="800">
   <div class="w3-display-bottomleft w3-padding-large">
-    <h1 class="w3-xxlarge w3-white w3-padding w3-round-xlarge">Oculus V1.0</h1>
+    <h1 class="w3-xxlarge w3-white w3-padding w3-round-xlarge">Oculus</h1>
   </div>
 </header>
 
@@ -78,16 +77,17 @@ h1, h2, h3, h4, h5, h6 {
 
   <!-- 3D render section -->
   <div class="w3-container w3-padding-64" id="render">
-    <h1>3D Render</h1><br>
+    <h1>3D Render</h1>
+    <h4><a href="/oculus_fs.html" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green">Fullscreen (opens in new tab)</a></h4><br>
     <!-- <model-viewer> HTML element -->
     <div class="w3-row w3-center w3-pale-blue w3-padding-64 w3-round-xlarge">
-      <model-viewer class="w3-round-xlarge" src="./public/models/oculus_obj_draco.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="/public/posters/oculus_poster.webp" shadow-intensity="1" camera-orbit="0deg 45deg 310.2m" field-of-view="16.2deg">
+      <model-viewer class="w3-round-xlarge" src="./public/models/oculus_obj_draco.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="./public/posters/oculus_poster.webp" shadow-intensity="1" camera-orbit="0deg 45deg 310.2m" field-of-view="16.2deg">
         <div class="progress-bar hide" slot="progress-bar">
             <div class="update-bar"></div>
         </div>
       </model-viewer>
     </div>
-    <script src="/public/script.js"></script>
+    <script src="./public/script.js"></script>
     <!-- Loads <model-viewer> for browsers: -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
   </div>
