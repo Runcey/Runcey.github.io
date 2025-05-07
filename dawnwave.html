@@ -24,11 +24,11 @@ h1, h2, h3, h4, h5, h6 {
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:3px;">
-    <a href="#home" class="w3-bar-item w3-button">under construction</a>
+    <a href="#home" class="w3-bar-item w3-button w3-light-gray w3-round-xlarge">top</a>
     <!-- Right-sided navbar links. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
       <a href="./oculus.html" class="w3-bar-item w3-button">Oculus</a>
-      <a href="./dawnwave.html" class="w3-bar-item w3-button w3-round-xlarge w3-pale-blue">DawnWave</a>
+      <a href="./dawnwave.html" class="w3-bar-item w3-button w3-round-xlarge w3-pale-green">DawnWave</a>
       <a href="./rp2040cr.html" class="w3-bar-item w3-button">Parachute Release</a>
       <a href="./" class="w3-bar-item w3-dark-grey w3-round-xlarge w3-button">Home</a>
     </div>
@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5, h6 {
 
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
-  <img class="w3-image w3-round-xlarge" src="./public/images/dawnwave_banner.jpg" alt="Parachute Release manufactured PCB" width="1600" height="800">
+  <img class="w3-image w3-round-xlarge" src="./public/images/dawnwave_banner.jpg" alt="Dawnwave PCB" width="1600" height="800">
   <div class="w3-display-bottomleft w3-padding-large">
     <h1 class="w3-xxlarge w3-white w3-padding w3-round-xlarge">DawnWave</h1>
   </div>
@@ -61,14 +61,13 @@ h1, h2, h3, h4, h5, h6 {
   <!-- About section -->
   <div class="w3-row w3-padding-64" id="about">
     <div class="w3-col l6 w3-padding-large">
-     <img src="./public/images/oculus_arender.png" class="w3-round-xlarge w3-image" alt="Oculus Altium Render" width="100%">
+     <img src="./public/images/dawnwave_built.JPG" class="w3-round-xlarge w3-image" alt="Dawnwave device assembly" width="100%">
     </div>
 
     <div class="w3-col l6 w3-padding-large">
       <h1 class="w3-center">About This Board</h1>
-      <h5 class="w3-center">(my third ever PCB design!)</h5>
-      <p class="w3-large">This is Oculus, an 8-layer FPGA accelerator board created in Altium intended to serve as a companion processor on the UAVs@Berkeley competition hexacopter. I did the schematic design and the majority of the layout for this board in Spring 2025 in <a href="https://ieee.berkeley.edu/#decals" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green w3-text-blue-grey">APE</a>, a UC Berkeley Decal, while my partner worked on the firmware and RTL. <a href="https://uav.studentorg.berkeley.edu/106a-fa24-gps/" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green w3-text-blue-grey">One of UAVs@Berkeley's projects</a> used the OpenCV implementation of ORB, a computer vision algorithm that is used to help match points in images together. Unfortunately, it runs at about 2 frames per second on our onboard computer, so I thought it would be an awesome experience to create a PCB to run a hardware implementation of it. Video data is streamed over RTSP into the ethernet port, processed on the FPGA, and output to the main onboard computer through USB 2.0. This particular form factor is compact and light, which is good for use aboard our drone where space and weight are at a premium.</p>
-      <p class="w3-center w3-text-blue-grey w3-large"><b><a href="https://uav.studentorg.berkeley.edu/106a-fa24-gps/" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green">Check it out on GitHub!</a></b></p>
+      <p class="w3-large">This board was created in the Fall 2024 offering of HOPE with my awesome group partners, <a href="https://www.linkedin.com/in/kimberly-duong/" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green">Kimberly</a> and <a href="https://www.linkedin.com/in/mallika-agrawal/" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green">Mallika</a>. It is the heart of a smart home device that sits on your nightstand or your desk, and can either manually or automatically control your other home devices while telling you information about your environment all through a simple, user-friendly interface. We thought that this would be a great addition to our own homes, while giving us solid experience on hardware and firmware development for devices related to IoT.</p>
+      <p class="w3-center w3-text-blue-grey w3-large"><b><a href="https://github.com/Runcey/HOPE-Fa24-DawnWave/" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green">Check it out on GitHub!</a></b></p>
       
     </div>
   </div>
@@ -76,11 +75,11 @@ h1, h2, h3, h4, h5, h6 {
   <hr>
 
   <!-- 3D render section -->
-  <div class="w3-container w3-padding-64" id="render">
+  <div class="w3-container w3-padding-32" id="render">
     <h1>3D Render</h1>
     <h4><a href="./dawnwave_fs.html" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green">Fullscreen (opens in new tab)</a></h4><br>
     <!-- <model-viewer> HTML element -->
-    <div class="w3-row w3-center w3-pale-blue w3-padding-64 w3-round-xlarge">
+    <div class="w3-row w3-center w3-pale-green w3-padding-32 w3-round-xlarge">
       <model-viewer class="w3-round-xlarge" src="./public/models/dawnwave.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="./public/posters/dawnwave_poster.webp" shadow-intensity="1" exposure="0.75" camera-orbit="30deg 90deg 0.1524m" field-of-view="30deg">
         <div class="progress-bar hide" slot="progress-bar">
             <div class="update-bar"></div>
@@ -98,28 +97,25 @@ h1, h2, h3, h4, h5, h6 {
   <div class="w3-row w3-padding-64" id="design">
     <div class="w3-col l6 w3-padding-large">
       <h1 class="w3-center">Design Choices</h1><br>
-      <h4>Zynq-7000 SoC</h4>
-      <p class="w3-text-grey">XC7Z020 400-BGA with two ARM cores and 85K PL cells for FPGA fabric. This was the cheapest FPGA that satisfied the requirements for the project, considering I was on a tight budget. This was also my first complex PCB design project, so I wanted something that had readily accessible example designs in case I couldn't figure something out on my own. </p><br>
+      <h4>ESP32-C6-WROOM-1</h4>
+      <p class="w3-text-grey">Dual-core RISC-V SoC with WiFi 6 and BLE 5. We chose this system because it was specifically advertised to support Matter and Zigbee, which we hoped to integrate DawnWave with. Although its IO counts are limited compared to some other ESP32 offerings, on paper it has some of the best wireless communication features of them all, and it is quite easy to work with in terms of wiring and firmware.</p><br>
     
-      <h4>512MB DDR3 SDRAM</h4>
-      <p class="w3-text-grey">Intended to hold images while processing them in the FPGA. DDR3 is the fastest memory supported on this FPGA, and I was fine with an extra voltage level on the board.</p><br>
+      <h4>BME688 Environment Sensor</h4>
+      <p class="w3-text-grey">This sensor provides temperature, humidity, pressure, and VOC data over I2C or SPI in a surprisingly small package. We chose it because of its compact size and low required component count (just two capacitors), which would be much easier to work with if we decided to make the board smaller in the future. It also has great firmware library support, which was very helpful due to time constraints.</p><br>
+      
+      <h4>MAX98357A Speaker Amp</h4>
+      <p class="w3-text-grey">An I2S speaker amplifier with simple configuration options. This is used for the alarm clock functionality of the board, and with the microSD card in the display, it allows users to choose anything they want for their alarm sounds.</p><br>
     
-      <h4>Gigabit Ethernet</h4>
-      <p class="w3-text-grey">DP83867CR ethernet PHY for RTSP video stream input. The camera on the UAVs@Berkeley competition hexacopter sends video data as an RTSP stream, so this was needed. It also opens the board up to more applications for use as a development tool. This particular PHY was chosen because of its clear documentation and availability.</p><br>
-    
-      <h4>USB 2.0</h4>
-      <p class="w3-text-grey">USB3320 USB 2.0 PHY with user-selectable host/peripheral mode. This is the fastest USB data protocol the FPGA supports, and it has pretty solid data transfer rates (480Mbps). That is more than enough to transfer low-resolution images and key point information to the onboard computer.</p><br>  
+      <h4>2.8" Capacitive Touchscreen Display</h4>
+      <p class="w3-text-grey">The interface users interact with. The touchscreen interfaces with this board following the <a href="https://learn.adafruit.com/adafruit-eyespi-breakout-board/overview" target="_blank" rel="noopener noreferrer" class="w3-text-blue-grey w3-hover-text-green">Adafruit EYESPI</a> 18-pin FPC cable pinout. The cable allows access to the touchscreen driver over I2C and both the microSD card and display driver over SPI. </p><br>
 
-      <h4>3 selectable boot modes</h4>
-      <p class="w3-text-grey">JTAG, QSPI, and SD card for large boot images.</p><br>   
-
-      <h4>Raspberry Pi-style IO header</h4>
-      <p class="w3-text-grey">GPIO pins connected to FPGA fabric to expand functionality of the board.</p>
-
+      <h4>Data bus breakouts</h4>
+      <p class="w3-text-grey">We chose to include these spare solder pads in the event that we wanted to add extra sensors or functionality to the board. An I2S microphone can be wired from a more optimal location for voice or sound recognition, and any other external I2C peripheral can be added on a dedicated bus separate from the one used on the board.</p>
+      
     </div>
     
     <div class="w3-col l6 w3-padding-large">
-      <img src="./public/images/oculus_closeups.jpeg" class="w3-round-xlarge w3-image" alt="Oculus board closeups" style="width:100%">
+      <img src="./public/images/dawnwave_render.png" class="w3-round-xlarge w3-image" alt="Dawnwave PCB render" style="width:100%">
     </div>
   </div>
 
@@ -127,10 +123,22 @@ h1, h2, h3, h4, h5, h6 {
 
   <!-- Bringup Section -->
   <div class="w3-container w3-padding-64" id="bringup">
-    <h1>Bringup/Future changes</h1><br>
-    <p>better test points, double sided board, smaller components, on/off switch</p>
-    <p class="w3-text-blue-grey w3-large"><b>cool heading</b></p>
-    <p>more text</p>
+    <div class="w3-col l6 w3-padding-large">
+      <img src="./public/images/dawnwave_bringup.jpeg" class="w3-round-xlarge w3-image" alt="Dawnwave work in progress" width="100%">
+    </div>
+
+    <div class="w3-col l6 w3-padding-large">
+      <h1>Bringup</h1>
+      <br>
+      <h4>Assembly and Bringup</h4>
+      <p>We assembled this board by hand with the help of a stencil and a reflow oven. We ended up adding too much solder paste to the board, so manual rework was necessary. Besides that, everything functioned as expected! The devices that are currently in use in firmware are the BME688 and touchscreen driver on I2C 0, and the display on SPI.</p>
+      <br>
+      <h4>Functionality</h4>
+      <p>At the end of the semester, we were able to implement several of our initial goals in firmware. Our final functionality included internet connectivity to obtain accurate time, readout of all four data streams from the BME688 (temperature, humidity, air pressure, and VOC concentration), and a display of all this data in an easy-to-read format on the LCD screen. We also included a test interface of what a controllable light switch would look like on our device.</p>
+      <br>
+      <h4>Future changes</h4>
+      <p>In order to further decrease the footprint of this board, we will redesign this board to use a much denser two-sided layout. The 2.54mm header pins at the top of the board will also be removed, because they were added for debugging purposes. Something that we noticed was that the display refresh rate was rather slow, so we may consider using its 8-bit data bus instead.</p>
+    </div>
   </div>
   
 <!-- End page content -->

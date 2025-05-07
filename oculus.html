@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5, h6 {
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:3px;">
-    <a href="#home" class="w3-bar-item w3-button">under construction</a>
+    <a href="#home" class="w3-bar-item w3-button w3-light-gray w3-round-xlarge">under construction</a>
     <!-- Right-sided navbar links. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
       <a href="./oculus.html" class="w3-bar-item w3-button w3-round-xlarge w3-pale-blue">Oculus</a>
@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5, h6 {
 
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
-  <img class="w3-image w3-round-xlarge" src="./public/images/oculus_banner.JPG" alt="Oculus V1.0 manufactured PCB" width="1600" height="800">
+  <img class="w3-image w3-round-xlarge" src="./public/images/oculus_banner.JPG" alt="Oculus V1.0 PCB" width="1600" height="800">
   <div class="w3-display-bottomleft w3-padding-large">
     <h1 class="w3-xxlarge w3-white w3-padding w3-round-xlarge">Oculus</h1>
   </div>
@@ -67,7 +67,7 @@ h1, h2, h3, h4, h5, h6 {
     <div class="w3-col l6 w3-padding-large">
       <h1 class="w3-center">About This Board</h1>
       <h5 class="w3-center">(my third ever PCB design!)</h5>
-      <p class="w3-large">This is Oculus, an 8-layer FPGA accelerator board created in Altium intended to serve as a companion processor on the UAVs@Berkeley competition hexacopter. I did the schematic design and the majority of the layout for this board in Spring 2025 in <a href="https://ieee.berkeley.edu/#decals" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green w3-text-blue-grey">APE</a>, a UC Berkeley Decal, while my partner worked on the firmware and RTL. <a href="https://uav.studentorg.berkeley.edu/106a-fa24-gps/" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green w3-text-blue-grey">One of UAVs@Berkeley's projects</a> used the OpenCV implementation of ORB, a computer vision algorithm that is used to help match points in images together. Unfortunately, it runs at about 2 frames per second on our onboard computer, so I thought it would be an awesome experience to create a PCB to run a hardware implementation of it. Video data is streamed over RTSP into the ethernet port, processed on the FPGA, and output to the main onboard computer through USB 2.0. This particular form factor is compact and light, which is good for use aboard our drone where space and weight are at a premium.</p>
+      <p class="w3-large">This is Oculus, an 8-layer FPGA accelerator board created in Altium intended to serve as a companion processor on the UAVs@Berkeley competition hexacopter. I did the schematic design and the majority of the layout for this board in the Spring 2025 offering of <a href="https://ieee.berkeley.edu/#decals" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green w3-text-blue-grey">APE</a>, a UC Berkeley Decal, while my partner worked on the firmware and RTL. <a href="https://uav.studentorg.berkeley.edu/106a-fa24-gps/" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green w3-text-blue-grey">One of UAVs@Berkeley's projects</a> used the OpenCV implementation of ORB, a computer vision algorithm that is used to help match points in images together. Unfortunately, it runs at about 2 frames per second on our onboard computer, so I thought it would be an awesome experience to create a PCB to run a hardware implementation of it. Video data is streamed over RTSP into the ethernet port, processed on the FPGA, and output to the main onboard computer through USB 2.0. This particular form factor is compact and light, which is good for use aboard our drone where space and weight are at a premium.</p>
       <p class="w3-center w3-text-blue-grey w3-large"><b><a href="https://uav.studentorg.berkeley.edu/106a-fa24-gps/" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green">Check it out on GitHub!</a></b></p>
       
     </div>
@@ -76,11 +76,11 @@ h1, h2, h3, h4, h5, h6 {
   <hr>
 
   <!-- 3D render section -->
-  <div class="w3-container w3-padding-64" id="render">
+  <div class="w3-container w3-padding-32" id="render">
     <h1>3D Render</h1>
     <h4><a href="/oculus_fs.html" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green">Fullscreen (opens in new tab)</a></h4><br>
     <!-- <model-viewer> HTML element -->
-    <div class="w3-row w3-center w3-pale-blue w3-padding-64 w3-round-xlarge">
+    <div class="w3-row w3-center w3-pale-blue w3-padding-32 w3-round-xlarge">
       <model-viewer class="w3-round-xlarge" src="./public/models/oculus_obj_draco.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="./public/posters/oculus_poster.webp" shadow-intensity="1" camera-orbit="0deg 45deg 310.2m" field-of-view="16.2deg">
         <div class="progress-bar hide" slot="progress-bar">
             <div class="update-bar"></div>
