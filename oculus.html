@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5, h6 {
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:3px;">
-    <a href="#home" class="w3-bar-item w3-button w3-light-gray w3-round-xlarge">under construction</a>
+    <a href="#home" class="w3-bar-item w3-button w3-light-gray w3-round-xlarge">top</a>
     <!-- Right-sided navbar links. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
       <a href="./oculus.html" class="w3-bar-item w3-button w3-round-xlarge w3-pale-blue">Oculus</a>
@@ -53,6 +53,7 @@ h1, h2, h3, h4, h5, h6 {
       <a href="#render" class="w3-bar-item w3-button">Render</a>
       <a href="#design" class="w3-bar-item w3-button">Design</a>
       <a href="#bringup" class="w3-bar-item w3-button">Bringup</a>
+      <a href="#takeaways" class="w3-bar-item w3-button">Takeaways</a>
     </div>
   </div>
   
@@ -68,7 +69,7 @@ h1, h2, h3, h4, h5, h6 {
       <h1 class="w3-center">About This Board</h1>
       <h5 class="w3-center">(my third ever PCB design!)</h5>
       <p class="w3-large">This is Oculus, an 8-layer FPGA accelerator board created in Altium intended to serve as a companion processor on the UAVs@Berkeley competition hexacopter. I did the schematic design and the majority of the layout for this board in the Spring 2025 offering of <a href="https://ieee.berkeley.edu/#decals" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green w3-text-blue-grey">APE</a>, a UC Berkeley Decal, while my partner worked on the firmware and RTL. <a href="https://uav.studentorg.berkeley.edu/106a-fa24-gps/" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green w3-text-blue-grey">One of UAVs@Berkeley's projects</a> used the OpenCV implementation of ORB, a computer vision algorithm that is used to help match points in images together. Unfortunately, it runs at about 2 frames per second on our onboard computer, so I thought it would be an awesome experience to create a PCB to run a hardware implementation of it. Video data is streamed over RTSP into the ethernet port, processed on the FPGA, and output to the main onboard computer through USB 2.0. This particular form factor is compact and light, which is good for use aboard our drone where space and weight are at a premium.</p>
-      <p class="w3-center w3-text-blue-grey w3-large"><b><a href="https://uav.studentorg.berkeley.edu/106a-fa24-gps/" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green">Check it out on GitHub!</a></b></p>
+      <!-- <p class="w3-center w3-text-blue-grey w3-large"><b><a href="https://uav.studentorg.berkeley.edu/106a-fa24-gps/" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green">Check it out on GitHub!</a></b></p> -->
       
     </div>
   </div>
@@ -127,11 +128,45 @@ h1, h2, h3, h4, h5, h6 {
 
   <!-- Bringup Section -->
   <div class="w3-container w3-padding-64" id="bringup">
-    <h1>Bringup</h1><br>
-    <p>first text</p>
-    <p class="w3-text-blue-grey w3-large"><b>cool heading</b></p>
-    <p>more text</p>
+    <div class="w3-col l6 w3-padding-large">
+      <h1>Bringup</h1>
+      <br>
+      <h4>What worked?</h4>
+      <ul>
+        <li class="w3-text-grey">All voltage levels stable (1V0, 1V5, 1V8, 2V5, 3V3)</li>
+        <li class="w3-text-grey">Fully programmable over USB through FT2232H</li>
+        <li class="w3-text-grey">UART interface and GPIO pins functional</li>
+      </ul>
+      <br>
+      <h4>What didn't work?</h4>
+      <ul>
+        <li class="w3-text-grey">Power sequencing (circular logic problem with 1V0 and 3V3) - fixed</li>
+        <li class="w3-text-grey">Host and GPIO LED driver circuits - fixed</li>
+        <li class="w3-text-grey">1V5 LDO wired backwards - fixed</li>
+        <li class="w3-text-grey">UVLO threshold too low - bypassed</li>
+      </ul>
+      <br>
+      <h4>What still needs to be tested?</h4>
+      <ul>
+        <li class="w3-text-grey">DDR3 has some errors (one byte lane is fully functional)</li>
+        <li class="w3-text-grey">Ethernet and USB 2.0 are undergoing testing</li>
+        <li class="w3-text-grey">Alternate boot modes (QSPI and microSD)</li>
+      </ul>
+      <br>
+    </div>
+    
+    <div class="w3-col l6 w3-padding-large">
+      <img src="./public/images/oculus_bringup.jpeg" class="w3-round-xlarge w3-image" alt="Oculus board closeups" style="width:100%">
+    </div>
   </div>
+
+  <div class="w3-container w3-padding-64" id="takeaways">
+    <h1>Takeaways</h1>
+    <br>
+    <p class="w3-large">This was a huge yet very rewarding project for me, and I am very proud that the board powered on and was able to be programmed! In the past, I have only designed two-layer boards in KiCAD, so making the jump all the way to 8 layers in Altium was a bit daunting at first. If I were to redesign the board, I would make several changes. First off, the DDR3 layout can definitely be optimized to potentially fit on 6 layers. To minimize the footprint of the board, I would remove the FTDI chip and spare USB port, and move more components to the back of the board. I would also completely rework the voltage levels with a programmable converter, which would make setting power up and power down sequences significantly easier.</p>
+    <br>
+  </div>
+    
   
 <!-- End page content -->
 </div>
