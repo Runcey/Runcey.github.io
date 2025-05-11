@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link type="text/css" href="/public/small_mv.css" rel="stylesheet"/>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="stylesheet" href="./public/slideshow.css">
 <link rel="icon" href="./public/images/favicon.png">
 
 <!-- <style>
@@ -53,6 +54,7 @@ h1, h2, h3, h4, h5, h6 {
       <a href="#render" class="w3-bar-item w3-button">Render</a>
       <a href="#design" class="w3-bar-item w3-button">Design</a>
       <a href="#bringup" class="w3-bar-item w3-button">Bringup</a>
+      <a href="#files" class="w3-bar-item w3-button">Files</a>
     </div>
   </div>
   
@@ -135,18 +137,53 @@ h1, h2, h3, h4, h5, h6 {
       <p>The I2C bus between the RP2040 and the BMP280 were the only sources of trouble for this board. I had forgotten the pullup resistors on it, so I hand-soldered pullups to a nearby 3V3 pad. The next issue was firmware related. I had selected the wrong pads to use for hardware I2C on the RP2040, so the Arduino IDE was impossible to use with it, even after attempting to recompile the libraries with software I2C support. In the end, I used MicroPython to successfully program the board.</p>
       <br>
       <h4>Functionality</h4>
-      <p>At the time of writing this, the board has been fully integrated into our payload system. Drop tests will be conducted in the next few days to validate its functionality!</p>
+      <p>The board has been fully integrated into our payload system, and drop tests have been conducted succesfully! We will continue characterizing the behavior of the onboard barometer before we bring it to competition.</p>
       <br>
       <h4>Future changes</h4>
       <p>The drop signal from the flight controller on the drone is at 5V logic level, while the input on the board is only 3.3V tolerant. Currently, I am using an external resistive divider for level shifting, but adding it to the board will be quite simple. To further reduce the weight and footprint of the board, and improve its impact resistance, I plan to add proper mounting holes and make the board double-sided with smaller components.</p>
     </div>
   </div>
-  <!-- <div class="w3-container w3-padding-64" id="bringup">
-    <h1>Bringup/Future changes</h1><br>
-    <p>oops, forgot about the pullup resistors for I2C! adding mounting holes, seeing how compact this board can be made by going two-sided and maybe more layers</p>
-    <p class="w3-text-blue-grey w3-large"><b>cool heading</b></p>
-    <p>more text</p>
-  </div> -->
+
+
+  <div class="w3-container w3-padding-64" id="files">
+    <h1>Schematics and Layers</h1>
+    <br>
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+
+      <!-- Full-width images with number and caption text -->
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="./public/images/rp2040cr_sch.png" style="width:100%">
+        <div class="text">Schematics</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="./public/images/rp2040cr_layer1.png" style="width:100%">
+        <div class="text">Top layer (signal)</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="./public/images/rp2040cr_layer2.png" style="width:100%">
+        <div class="text">Bottom layer (signal)</div>
+      </div>
+
+      <!-- Next and previous buttons -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+    <br>
+  </div>
   
 <!-- End page content -->
 </div>
@@ -155,6 +192,37 @@ h1, h2, h3, h4, h5, h6 {
 <footer class="w3-center w3-light-grey w3-padding-32">
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green">w3.css</a></p>
 </footer>
+
+<script>
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+  }
+</script>
 
 </body>
 </html>

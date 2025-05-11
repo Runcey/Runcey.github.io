@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link type="text/css" href="./public/small_mv.css" rel="stylesheet"/>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="stylesheet" href="./public/slideshow.css">
 <link rel="icon" href="./public/images/favicon.png">
 
 <!-- <style>
@@ -54,6 +55,7 @@ h1, h2, h3, h4, h5, h6 {
       <a href="#design" class="w3-bar-item w3-button">Design</a>
       <a href="#bringup" class="w3-bar-item w3-button">Bringup</a>
       <a href="#takeaways" class="w3-bar-item w3-button">Takeaways</a>
+      <a href="#copper" class="w3-bar-item w3-button">Copper</a>
     </div>
   </div>
   
@@ -152,7 +154,6 @@ h1, h2, h3, h4, h5, h6 {
         <li class="w3-text-grey">Ethernet and USB 2.0 are undergoing testing</li>
         <li class="w3-text-grey">Alternate boot modes (QSPI and microSD)</li>
       </ul>
-      <br>
     </div>
     
     <div class="w3-col l6 w3-padding-large">
@@ -164,6 +165,80 @@ h1, h2, h3, h4, h5, h6 {
     <h1>Takeaways</h1>
     <br>
     <p class="w3-large">This was a huge yet very rewarding project for me, and I am very proud that the board powered on and was able to be programmed! In the past, I have only designed two-layer boards in KiCAD, so making the jump all the way to 8 layers in Altium was a bit daunting at first. If I were to redesign the board, I would make several changes. First off, the DDR3 layout can definitely be optimized to potentially fit on 6 layers. To minimize the footprint of the board, I would remove the FTDI chip and spare USB port, and move more components to the back of the board. I would also completely rework the voltage levels with a programmable converter, which would make setting power up and power down sequences significantly easier.</p>
+  </div>
+
+  <div class="w3-container w3-padding-64" id="copper">
+    <h1>Copper Layers</h1>
+    <br>
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+
+      <!-- Full-width images with number and caption text -->
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 8</div>
+        <img src="./public/images/oculus_layer1.png" style="width:100%">
+        <div class="text">Top layer (signal)</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 8</div>
+        <img src="./public/images/oculus_layer2.png" style="width:100%">
+        <div class="text">Inner layer 1 (ground)</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 8</div>
+        <img src="./public/images/oculus_layer3.png" style="width:100%">
+        <div class="text">Inner layer 2 (signal)</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">4 / 8</div>
+        <img src="./public/images/oculus_layer4.png" style="width:100%">
+        <div class="text">Inner layer 3 (power)</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">5 / 8</div>
+        <img src="./public/images/oculus_layer5.png" style="width:100%">
+        <div class="text">Inner layer 4 (ground)</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">6 / 8</div>
+        <img src="./public/images/oculus_layer6.png" style="width:100%">
+        <div class="text">Inner layer 5 (signal)</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">7 / 8</div>
+        <img src="./public/images/oculus_layer7.png" style="width:100%">
+        <div class="text">Inner layer 6 (power)</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">8 / 8</div>
+        <img src="./public/images/oculus_layer8.png" style="width:100%">
+        <div class="text">Bottom layer (signal)</div>
+      </div>
+
+      <!-- Next and previous buttons -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span>
+      <span class="dot" onclick="currentSlide(6)"></span>
+      <span class="dot" onclick="currentSlide(7)"></span>
+      <span class="dot" onclick="currentSlide(8)"></span>
+    </div>
     <br>
   </div>
     
@@ -176,5 +251,35 @@ h1, h2, h3, h4, h5, h6 {
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green">w3.css</a></p>
 </footer>
 
+<script>
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+  }
+</script>
 </body>
 </html>
