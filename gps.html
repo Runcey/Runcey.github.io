@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>WIP</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link type="text/css" href="./public/small_mv.css" rel="stylesheet"/>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="stylesheet" href="./public/slideshow.css">
+<link rel="icon" href="./public/images/favicon.png">
+
+<!-- <style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+</style> -->
+<style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:3px;">
+    <a href="#home" class="w3-bar-item w3-button w3-light-gray w3-round-xlarge">top</a>
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <!-- <a href="./oculus.html" class="w3-bar-item w3-button w3-round-xlarge w3-pale-blue">Oculus</a>
+      <a href="./dawnwave.html" class="w3-bar-item w3-button">DawnWave</a>
+      <a href="./rp2040cr.html" class="w3-bar-item w3-button">Parachute Release</a> -->
+      <a href="./" class="w3-bar-item w3-dark-grey w3-round-xlarge w3-button">Home</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+  <img class="w3-image w3-round-xlarge" src="./public/images/gps_banner.JPG" alt="Sabertooth - front view" width="1600" height="800">
+  <div class="w3-display-bottomleft w3-padding-large">
+    <h1 class="w3-xxlarge w3-white w3-padding w3-round-xlarge">GPS-Denied Navigation</h1>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+  <hr>
+  <!-- Table of contents bar -->
+  <div class="w3-row w3-padding-16 w3-border w3-round-large" id="tc">
+    <div class="w3-center w3-xxlarge w3-text-blue-grey">
+      <a href="#about" class="w3-bar-item w3-button">About</a>
+      <a href="#render" class="w3-bar-item w3-button">Render</a>
+      <a href="#design" class="w3-bar-item w3-button">Design</a>
+      <a href="#bringup" class="w3-bar-item w3-button">Bringup</a>
+      <a href="#takeaways" class="w3-bar-item w3-button">Takeaways</a>
+      <a href="#video" class="w3-bar-item w3-button">Video</a>
+    </div>
+  </div>
+  
+  <hr>
+
+  <!-- About section -->
+  <div class="w3-row w3-padding-64" id="about">
+    <div class="w3-col l6 w3-padding-large">
+     <img src="./public/images/oculus_arender.png" class="w3-round-xlarge w3-image" alt="Oculus Altium Render" width="100%">
+    </div>
+
+    <div class="w3-col l6 w3-padding-large">
+      <h1 class="w3-center">About This Board</h1>
+      <h5 class="w3-center">(my third ever PCB design!)</h5>
+      <p class="w3-large">This is Oculus, an 8-layer FPGA accelerator board created in Altium intended to serve as a companion processor on the UAVs@Berkeley competition hexacopter. I did the schematic design and the majority of the layout for this board in the Spring 2025 offering of <a href="https://ieee.berkeley.edu/#decals" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green w3-text-blue-grey">APE</a>, a UC Berkeley Decal, while my partner worked on the firmware and RTL. <a href="https://uav.studentorg.berkeley.edu/106a-fa24-gps/" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green w3-text-blue-grey">One of UAVs@Berkeley's projects</a> used the OpenCV implementation of ORB, a computer vision algorithm that is used to help match points in images together. Unfortunately, it runs at about 2 frames per second on our onboard computer, so I thought it would be an awesome experience to create a PCB to run a hardware implementation of it. Video data is streamed over RTSP into the ethernet port, processed on the FPGA, and output to the main onboard computer through USB 2.0. This particular form factor is compact and light, which is good for use aboard our drone where space and weight are at a premium.</p>
+      <!-- <p class="w3-center w3-text-blue-grey w3-large"><b><a href="https://uav.studentorg.berkeley.edu/106a-fa24-gps/" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green">Check it out on GitHub!</a></b></p> -->
+      
+    </div>
+  </div>
+  
+  <hr>
+
+  <!-- 3D render section -->
+  <div class="w3-container w3-padding-32" id="render">
+    <h1>3D Render</h1>
+    <h4><a href="/oculus_fs.html" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green">Fullscreen (opens in new tab)</a></h4><br>
+    <!-- <model-viewer> HTML element -->
+    <div class="w3-row w3-center w3-pale-blue w3-padding-32 w3-round-xlarge">
+      <model-viewer class="w3-round-xlarge" src="./public/models/oculus_obj_draco.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="./public/posters/oculus_poster.webp" shadow-intensity="1" camera-orbit="0deg 45deg 310.2m" field-of-view="16.2deg">
+        <div class="progress-bar hide" slot="progress-bar">
+            <div class="update-bar"></div>
+        </div>
+      </model-viewer>
+    </div>
+    <script src="./public/script.js"></script>
+    <!-- Loads <model-viewer> for browsers: -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+  </div>
+
+  <hr>
+  
+  <!-- Design section -->
+  <div class="w3-row w3-padding-64" id="design">
+    <div class="w3-col l6 w3-padding-large">
+      <h1 class="w3-center">Design Choices</h1><br>
+      <h4>Zynq-7000 SoC</h4>
+      <p class="w3-text-grey">XC7Z020 400-BGA with two ARM cores and 85K PL cells for FPGA fabric. This was the cheapest FPGA that satisfied the requirements for the project, considering I was on a tight budget. This was also my first complex PCB design project, so I wanted something that had readily accessible example designs in case I couldn't figure something out on my own. </p><br>
+    
+      <h4>512MB DDR3 SDRAM</h4>
+      <p class="w3-text-grey">Intended to hold images while processing them in the FPGA. DDR3 is the fastest memory supported on this FPGA, and I was fine with an extra voltage level on the board.</p><br>
+    
+      <h4>Gigabit Ethernet</h4>
+      <p class="w3-text-grey">DP83867CR ethernet PHY for RTSP video stream input. The camera on the UAVs@Berkeley competition hexacopter sends video data as an RTSP stream, so this was needed. It also opens the board up to more applications for use as a development tool. This particular PHY was chosen because of its clear documentation and availability.</p><br>
+    
+      <h4>USB 2.0</h4>
+      <p class="w3-text-grey">USB3320 USB 2.0 PHY with user-selectable host/peripheral mode. This is the fastest USB data protocol the FPGA supports, and it has pretty solid data transfer rates (480Mbps). That is more than enough to transfer low-resolution images and key point information to the onboard computer.</p><br>  
+
+      <h4>3 selectable boot modes</h4>
+      <p class="w3-text-grey">JTAG, QSPI, and SD card for large boot images.</p><br>   
+
+      <h4>Raspberry Pi-style IO header</h4>
+      <p class="w3-text-grey">GPIO pins connected to FPGA fabric to expand functionality of the board.</p>
+
+    </div>
+    
+    <div class="w3-col l6 w3-padding-large">
+      <img src="./public/images/oculus_closeups.jpeg" class="w3-round-xlarge w3-image" alt="Oculus board closeups" style="width:100%">
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Bringup Section -->
+  <div class="w3-container w3-padding-64" id="bringup">
+    <div class="w3-col l6 w3-padding-large">
+      <h1>Bringup</h1>
+      <br>
+      <h4>What worked?</h4>
+      <ul>
+        <li class="w3-text-grey">All voltage levels stable (1V0, 1V5, 1V8, 2V5, 3V3)</li>
+        <li class="w3-text-grey">Fully programmable over USB through FT2232H</li>
+        <li class="w3-text-grey">UART interface and GPIO pins functional</li>
+      </ul>
+      <br>
+      <h4>What didn't work?</h4>
+      <ul>
+        <li class="w3-text-grey">Power sequencing (circular logic problem with 1V0 and 3V3) - fixed</li>
+        <li class="w3-text-grey">Host and GPIO LED driver circuits - fixed</li>
+        <li class="w3-text-grey">1V5 LDO wired backwards - fixed</li>
+        <li class="w3-text-grey">UVLO threshold too low - bypassed</li>
+      </ul>
+      <br>
+      <h4>What still needs to be tested?</h4>
+      <ul>
+        <li class="w3-text-grey">DDR3 has some errors (one byte lane is fully functional)</li>
+        <li class="w3-text-grey">Ethernet and USB 2.0 are undergoing testing</li>
+        <li class="w3-text-grey">Alternate boot modes (QSPI and microSD)</li>
+      </ul>
+    </div>
+    
+    <div class="w3-col l6 w3-padding-large">
+      <img src="./public/images/oculus_bringup.jpeg" class="w3-round-xlarge w3-image" alt="Oculus board closeups" style="width:100%">
+    </div>
+  </div>
+
+  <div class="w3-container w3-padding-64" id="takeaways">
+    <h1>Takeaways</h1>
+    <br>
+    <p class="w3-large">This was a huge yet very rewarding project for me, and I am very proud that the board powered on and was able to be programmed! In the past, I have only designed two-layer boards in KiCAD, so making the jump all the way to 8 layers in Altium was a bit daunting at first. If I were to redesign the board, I would make several changes. First off, the DDR3 layout can definitely be optimized to potentially fit on 6 layers. To minimize the footprint of the board, I would remove the FTDI chip and spare USB port, and move more components to the back of the board. I would also completely rework the voltage levels with a programmable converter, which would make setting power up and power down sequences significantly easier.</p>
+  </div>
+
+  <div class="w3-container w3-padding-64" id="video">
+    <h1>Video Summary</h1>
+    <br>
+    <div class="w3-col w3-center">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/CKEMfrk3t6I?si=WmgyocSrkwHa0EL1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </div>
+  
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" rel="noopener noreferrer" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+<script>
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+  }
+</script>
+</body>
+</html>

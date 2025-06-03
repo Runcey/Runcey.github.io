@@ -27,6 +27,10 @@ app.get('/rp2040cr_fs', function (req, res) {
     res.sendFile(__dirname + '/rp2040cr_fs.html');
 });
 
+app.get('/getting-started', function (req, res) {
+    res.sendFile(__dirname + '/drones.html');
+});
+
 //run this server by entering "node app.js" using your command line. 
 app.listen(port, () => {
     console.log(`Server is running on http://${host}:${port}`);
